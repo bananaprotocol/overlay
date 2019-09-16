@@ -27,7 +27,7 @@ put the following text in that file:
 # bananaprotocol's personal Gentoo overlay
 # Maintainer: bananaprotocol (https://github.com/bananaprotocol)
 
-location = /usr/local/portage/steam-overlay
+location = /usr/local/portage/banana-overlay
 sync-type = git
 sync-uri = https://github.com/bananaprotocol/overlay.git
 priority = 50
