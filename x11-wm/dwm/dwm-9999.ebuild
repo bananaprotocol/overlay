@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
-inherit git-r3 toolchain-funcs
+inherit git-r3 savedconfig toolchain-funcs
 
 DESCRIPTION="a dynamic window manager for X11 (fork by bananaprotocol)"
 HOMEPAGE="https://dwm.suckless.org/"
@@ -11,7 +11,7 @@ EGIT_REPO_URI="https://github.com/bananaprotocol/${PN}"
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS=""
-IUSE="xinerama"
+IUSE="savedconfig xinerama"
 
 RDEPEND="
 	media-libs/fontconfig
@@ -46,5 +46,7 @@ src_install() {
 	emake DESTDIR="${D}" PREFIX="${EPREFIX}/usr" install
 
 	dodoc README
+
+	save_config config.h
 }
 
