@@ -32,6 +32,8 @@ src_prepare() {
 		-e "s/ -Os / /" \
 		-e "/^\(LDFLAGS\|CFLAGS\|CPPFLAGS\)/{s| = | += |g;s|-s ||g}" \
 		config.mk || die
+
+	restore_config config.h
 }
 
 src_compile() {
