@@ -18,7 +18,6 @@ RDEPEND="
 	x11-libs/libX11
 	x11-libs/libXft
 	xinerama? ( x11-libs/libXinerama )
-	media-fonts/fira-code
 "
 DEPEND="
 	${RDEPEND}
@@ -50,5 +49,9 @@ src_install() {
 	dodoc README
 
 	save_config config.h
+}
+
+pkg_postinst() {
+	optfeature "Default font" media-fonts/iosevka
 }
 

@@ -23,7 +23,6 @@ RDEPEND="
 		media-libs/fontconfig
 		x11-libs/libX11
 		x11-libs/libXft
-		media-fonts/fira-code
 "
 
 src_prepare() {
@@ -55,5 +54,9 @@ src_install() {
 		make_desktop_entry ${PN} simpleterm utilities-terminal 'System;TerminalEmulator;' ''
 
 		save_config config.h
+}
+
+pkg_postinst() {
+	optfeature "Default font" media-fonts/iosevka
 }
 
